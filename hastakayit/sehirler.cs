@@ -74,24 +74,23 @@ namespace hastakayit
                 string cumle = "update sehirler set sehir_Adi='" + textBox1.Text + "'where Id='" + textBox2.Text + "'";
                 veri.crud(cumle);
                 doldur();
+
+
             }
-            
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            int secim = dataGridView1.CurrentCell.RowIndex;
-            textBox1.Text = dataGridView1.Rows[secim].Cells[1].Value.ToString();
-            textBox2.Text = dataGridView1.Rows[secim].Cells[0].Value.ToString();
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
             string ara = Interaction.InputBox("Şehir Adını Girin");
             string cumle = "Select *from sehirler where sehir_Adi='" + ara + "'";
-            dataGridView1.DataSource= veri.doldur(cumle);
+            dataGridView1.DataSource = veri.doldur(cumle);
+        }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int secim = dataGridView1.CurrentCell.RowIndex;
+            textBox1.Text = dataGridView1.Rows[secim].Cells[1].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[secim].Cells[0].Value.ToString();
         }
     }
 }
